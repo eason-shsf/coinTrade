@@ -48,6 +48,7 @@ function createSign(params) {
   params = ksort(params);
   var preSign = http_build_query(params);
   var sign = jsmd5(preSign);
+  params["secret_key"] = "";
   return sign.toLowerCase();
 }
 
